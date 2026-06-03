@@ -1,0 +1,96 @@
+# ==========================
+# PYTHON
+# ==========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
+env/
+venv/
+ENV/
+.venv/
+
+# ==========================
+# ENV VARIABLES
+# ==========================
+
+.env
+.env.local
+.env.production
+
+# ==========================
+# IDE / EDITORS
+# ==========================
+
+.vscode/
+.idea/
+
+# ==========================
+# OS FILES
+# ==========================
+
+.DS_Store
+Thumbs.db
+
+# ==========================
+# TESTING / CACHE
+# ==========================
+
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# ==========================
+# JUPYTER
+# ==========================
+
+.ipynb_checkpoints/
+
+# ==========================
+# BUILD / DIST
+# ==========================
+
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# LOGS
+# ==========================
+
+*.log
+
+# ==========================
+# DOCKER
+# ==========================
+
+.dockerignore
+
+# ==========================
+# LOCAL DATABASES
+# ==========================
+
+*.sqlite3
+*.db
+
+# ==========================
+# MODELOS ML
+# ==========================
+# IMPORTANTE:
+# Ignoramos modelos temporales
+# pero NO ignores tus modelos finales
+# si Northflank los necesita.
+
+app/models/*.joblib
+
+# Si usas entrenamientos temporales:
+tmp_models/
+
+# ==========================
+# WSL / DOCKER RESIDUALS
+# ==========================
+
+docker-desktop-data/
