@@ -352,7 +352,7 @@ class CustomerAnalyticsService:
                     purchase_frequency_days,
 
                 "customer_lifetime_value":
-                    customer_lifetime_value
+                    round(customer_lifetime_value, 2)
             },
 
             "commercial_profile": {
