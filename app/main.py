@@ -4,6 +4,7 @@ from app.api.customer_test import router as customer_router
 from app.api.analysis import (
     router as analysis_router
 )
+from fastapi.middleware.cors import CORSMiddleware
 
 import app.models
 
@@ -11,6 +12,20 @@ app = FastAPI(
     title="Copiloto Analytics API",
     version="1.0.0"
 )
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(...)
 
 # Registrar rutas
 app.include_router(test_router)
