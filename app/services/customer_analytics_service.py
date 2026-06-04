@@ -87,6 +87,52 @@ class CustomerAnalyticsService:
         )
 
         total_orders = len(orders)
+        if total_orders == 0:
+
+            return {
+                "customer": {
+                    "id": customer.id,
+                    "name": customer.fullName
+                },
+
+                "metrics": {
+                    "total_orders": 0,
+                    "total_spent": 0,
+                    "avg_ticket": 0,
+                    "days_since_last_purchase": None,
+                    "purchase_frequency_days": None,
+                    "customer_lifetime_value": 0
+                },
+
+                "commercial_profile": {
+                    "favorite_product": None,
+                    "cross_sell_product": None,
+                    "favorite_category": None
+                },
+
+                "score": 0,
+
+                "segment": "NEW",
+
+                "risk": "LOW",
+
+                "purchase_probability": 0,
+
+                "churn_probability": 0,
+
+                "recommended_products": [],
+
+                "next_action": {
+                    "action": "WELCOME_CAMPAIGN",
+                    "priority": "MEDIUM"
+                },
+
+                "explanation":
+                    "Cliente nuevo sin historial de compras. "
+                    "Se recomienda una campaña de bienvenida "
+                    "y recopilación de preferencias para generar "
+                    "la primera conversión."
+            }
 
         total_spent = sum(
             float(order.totalAmount)
@@ -388,10 +434,10 @@ class CustomerAnalyticsService:
                     "churn_probability"
                 ],
 
-            "recommended_products":[
-
-                cross_sell_name
-            ],
+            "recommended_products":
+                [cross_sell_name]
+                if cross_sell_name
+                else [],
 
             "next_action": {
 
