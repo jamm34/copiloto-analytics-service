@@ -340,10 +340,10 @@ class CustomerAnalyticsService:
                     total_orders,
 
                 "total_spent":
-                    total_spent,
+                    round(total_spent, 2),
 
                 "avg_ticket":
-                    avg_ticket,
+                    round(avg_ticket, 2),
 
                 "days_since_last_purchase":
                     days_since_last_purchase,
